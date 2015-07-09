@@ -7,13 +7,7 @@ class Monster:
 	hit_points = 1
 	color = 'yellow'
 	weapon = 'sword'
+	sound = 'roar'
 
-
-# to call this up in the Python shell I could access it by doing:
->>> from monster import Monster
->>> Monster.hit_points
-1
->>> Monster.color
-'yellow'
->>> Monster.weapon
-'sword'
+	def battlecry(self):
+		return self.sound.upper()
