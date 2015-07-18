@@ -3,7 +3,7 @@ import random
 COLORS = ['yellow', 'red', 'blue', 'green']
 
 
-class Monster: 
+class Monster(object): # by explicitly stating the object in the Monster class, the class more easily works in Python 2 and Python 3.
 	min_hit_points = 1
 	max_hit_points = 1
 	min_experience = 1
@@ -18,7 +18,11 @@ class Monster:
 
 		for key, value in kwargs.items():
 			setattr(self, key, value) # setattr, set attribute, take three arguments, what we set it on, the key passed in, and the value passed in.
-	
 
 	def battlecry(self): # a function that belongs to a class is called a method
 		return self.sound.upper()
+
+
+# Usually you limit yourself to one class per file, but in the case of subclasses it's less of a problem. 
+
+class Goblin(Monster): # by putting Monster in as an argument, this tells python that Goblin is a subclass of Monster and that it automatically inherits all of the Monster attributes. 
