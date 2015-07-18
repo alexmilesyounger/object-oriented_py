@@ -1,13 +1,9 @@
 class Monster: 
-# classes are Titlecased by convention in Python
+	def __init__(self, **kwargs): # **kwargs will take whatever arguments we give it as a dictionary and will parse them into keyword = value pairs
+		self.hit_points = kwargs.get('hit_points', 1)
+		self.weapon = kwargs.get('weapon', 'sword')
+		self.color = kwargs.get('color', 'yellow')
+		self.sound = kwargs.get('sound', 'roar')
 
-# defining classes is a lot like defining functions, except we use the 'class' keyword to start them. You can do the parenthesis ( ) after and include a dependency, ex. Monster(object), but that's not strictly necessary. 
-
-# Also 'objects' in object-oriented programming are also known as classes. objects = classes, classes = objects. Although, he said something like everyting in Python is an object, tu I think that's a level of theoretical digging that I'll skip for the moment. 
-	hit_points = 1
-	color = 'yellow'
-	weapon = 'sword'
-	sound = 'roar'
-
-	def battlecry(self):
+	def battlecry(self): # a function that belongs to a class is called a method
 		return self.sound.upper()
