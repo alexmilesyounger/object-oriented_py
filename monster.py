@@ -19,6 +19,13 @@ class Monster(object): # by explicitly stating the object in the Monster class, 
 		for key, value in kwargs.items():
 			setattr(self, key, value) # setattr, set attribute, take three arguments, what we set it on, the key passed in, and the value passed in.
 
+	def __str__(self): 	# this function controls how the class instances will print themselves. 
+		return '{} {}, HP: {}, XP: {}'.format(self.color.title(), 
+											  self.__class__.__name__, 
+											  self.hit_points,
+											  self.experience)
+
+
 	def battlecry(self): # a function that belongs to a class is called a method
 		return self.sound.upper()
 
