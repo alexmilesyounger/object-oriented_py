@@ -7,9 +7,9 @@ class Combat(object):
 
 	def dodge(self):
 		roll = random.randint(1, dodge_limit)
-		return > 4
+		return roll > 4
 
 	def attack(self):
 		roll = random.randint(1, attack_limit)
-		return > 4
+		return roll > 4
 
