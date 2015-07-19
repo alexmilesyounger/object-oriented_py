@@ -1,3 +1,4 @@
+import random
 from combat import Combat
 
 class Character(Combat, object):
