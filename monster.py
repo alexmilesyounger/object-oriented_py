@@ -4,7 +4,7 @@ from combat import Combat
 COLORS = ['yellow', 'red', 'blue', 'green']
 
 
-class Monster(object, Combat): # by explicitly stating the object in the Monster class, the class more easily works in Python 2 and Python 3 at the same time. Adding the Combat class gives the Monster class the abilities of something with the Combat class
+class Monster(Combat, object): # IF you explicitly state the object (which helps the code be run by Python 2 and 3 at the same time) you have to enter the non-native, non-subclass class first. In this case putting Combat first, and then object. If you put object first you'd get a MRO (method resolution error) because it would try to import the Combat stuff and then override it with the object stuff. Object-oriented programming is confusing. 
 	min_hit_points = 1
 	max_hit_points = 1
 	min_experience = 1

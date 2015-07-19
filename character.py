@@ -1,8 +1,17 @@
 from combat import Combat
 
-class Character(object):
+class Character(Combat, object):
+	attack_limit = 10 # this overrides the attack inheritance and lets the character roll between 1 and 10, giving more opportunities for a "hit" (a number above 4). 
 	experience = 0
 	hit_points = 10
+
+	def attack(self):
+		roll = random.randint(1, self.attack_limit)
+		if self.weapon == 'sword':
+			roll += 1
+		elif self.weapon == 'axe':
+			roll += 2
+		return roll > 4
 
 	def get_weapon(self):
 		weapon_choice = input("Weapon ([S]word, [A]xe, [B]ow: ").lower()

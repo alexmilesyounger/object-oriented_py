@@ -6,10 +6,10 @@ class Combat(object):
 	attack_limit = 6
 
 	def dodge(self):
-		roll = random.randint(1, dodge_limit)
+		roll = random.randint(1, self.dodge_limit)
 		return roll > 4
 
 	def attack(self):
-		roll = random.randint(1, attack_limit)
+		roll = random.randint(1, self.attack_limit)
 		return roll > 4
 
