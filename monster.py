@@ -1,9 +1,10 @@
 import random
+from combat import Combat
 
 COLORS = ['yellow', 'red', 'blue', 'green']
 
 
-class Monster(object): # by explicitly stating the object in the Monster class, the class more easily works in Python 2 and Python 3 at the same time.
+class Monster(object, Combat): # by explicitly stating the object in the Monster class, the class more easily works in Python 2 and Python 3 at the same time. Adding the Combat class gives the Monster class the abilities of something with the Combat class
 	min_hit_points = 1
 	max_hit_points = 1
 	min_experience = 1
